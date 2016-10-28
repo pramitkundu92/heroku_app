@@ -1,4 +1,4 @@
-var HTTPS_PORT = 8080;
+var HTTPS_PORT = 10000;
 var HTTPS_IP = '0.0.0.0';
 
 var fs = require('fs');
@@ -39,7 +39,7 @@ var handleRequest = function(request, response) {
 };
 
 var httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT, HTTPS_IP);
+httpsServer.listen(HTTPS_PORT);
 
 // ----------------------------------------------------------------------------------------
 
