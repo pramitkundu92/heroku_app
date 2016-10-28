@@ -18,7 +18,7 @@ var handleRequest = function(request, response) {
     // Render the single client html file for any request the HTTP server receives
     console.log('request received: ' + request.url);
 
-    if(request.url == '/') {
+    if(request.url == '/index') {
         response.writeHead(200, {'Content-Type': 'text/html'});
         response.end(fs.readFileSync('index.html'));
     } else if(request.url == '/main.js') {
@@ -31,10 +31,6 @@ var handleRequest = function(request, response) {
     }
     else if(request.url == '/favicon.ico') {
         response.end(fs.readFileSync('favicon.ico'));
-    }
-    else {
-        response.writeHead(200, {'Content-Type': 'text/html'});
-        response.end(fs.readFileSync('index.html'));
     }
 };
 
@@ -59,4 +55,4 @@ wss.broadcast = function(data) {
     }
 };
 
-console.log('Server running. Visit https://' + HTTPS_IP + ':' + HTTPS_PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');
+console.log('Server running. Visit https://' + HTTPS_IP + ':' + HTTPS_PORT + '/index in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');
