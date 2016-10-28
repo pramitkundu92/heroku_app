@@ -4,11 +4,20 @@
   "description": "one to one video chat",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "pramit kundu",
   "license": "ISC",
-  "dependencies" : [
-    {"ws": "1.1.1"}
-  ]
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pramitkundu92/heroku_app.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/pramitkundu92/heroku_app/issues"
+  },
+  "homepage": "https://github.com/pramitkundu92/heroku_app#readme"
 }
