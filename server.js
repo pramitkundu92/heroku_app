@@ -39,7 +39,7 @@ var handleRequest = function(request, response) {
 };
 
 var httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT);
+httpsServer.listen(process.env.PORT || HTTPS_PORT);
 
 // ----------------------------------------------------------------------------------------
 
