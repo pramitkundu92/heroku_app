@@ -1,4 +1,4 @@
-var HTTPS_PORT = 8443;
+var HTTPS_PORT = 8080;
 var HTTPS_IP = '0.0.0.0';
 
 var fs = require('fs');
@@ -28,6 +28,13 @@ var handleRequest = function(request, response) {
     else if(request.url == '/adapter.js') {
         response.writeHead(200, {'Content-Type': 'application/javascript'});
         response.end(fs.readFileSync('webapp/js/adapter.js'));
+    }
+    else if(request.url == '/favicon.ico') {
+        response.end(fs.readFileSync('favicon.ico'));
+    }
+    else {
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        response.end(fs.readFileSync('index.html'));
     }
 };
 
